@@ -236,7 +236,7 @@ LOG_FILE="musl-${MUSL_VERSION}.log"
 cd ${TMUX_STATIC_HOME}/src || exit 1
 if [ ! -f ${MUSL_ARCHIVE} ]; then
     printf "Downloading..."
-    wget --no-verbose ${MUSL_URL}/${MUSL_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
+    wget --no-check-certificate --no-verbose ${MUSL_URL}/${MUSL_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
     checkResult $?
 fi
 
@@ -276,7 +276,7 @@ LOG_FILE="libevent-${LIBEVENT_VERSION}-stable.log"
 cd ${TMUX_STATIC_HOME}/src || exit 1
 if [ ! -f ${LIBEVENT_ARCHIVE} ]; then
     printf "Downloading..."
-    wget --no-verbose ${LIBEVENT_URL}/${LIBEVENT_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
+    wget --no-check-certificate --no-verbose ${LIBEVENT_URL}/${LIBEVENT_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
     checkResult $?
 fi
 
@@ -317,7 +317,7 @@ LOG_FILE="ncurses-${NCURSES_VERSION}.log"
 cd ${TMUX_STATIC_HOME}/src || exit 1
 if [ ! -f ${NCURSES_ARCHIVE} ]; then
     printf "Downloading..."
-    wget --no-verbose ${NCURSES_URL}/${NCURSES_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
+    wget --no-check-certificate --no-verbose ${NCURSES_URL}/${NCURSES_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
     checkResult $?
 fi
 
@@ -362,7 +362,7 @@ LOG_FILE="tmux-${TMUX_VERSION}.log"
 cd ${TMUX_STATIC_HOME}/src || exit 1
 if [ ! -f ${TMUX_ARCHIVE} ]; then
     printf "Downloading..."
-    wget --no-verbose ${TMUX_URL}/${TMUX_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
+    wget --no-check-certificate --no-verbose ${TMUX_URL}/${TMUX_ARCHIVE} > ${LOG_DIR}/${LOG_FILE} 2>&1
     checkResult $?
 fi
 
@@ -418,7 +418,7 @@ if [ -n "${USE_UPX}" ] && [ ${USE_UPX} = 1 ]; then
     cd ${TMUX_STATIC_HOME}/src || exit 1
     if [ ! -f ${UPX_ARCHIVE} ]; then
         printf "Downloading..."
-        wget --no-verbose ${UPX_URL}/${UPX_ARCHIVE} >> ${LOG_DIR}/${LOG_FILE} 2>&1
+        wget --no-check-certificate --no-verbose ${UPX_URL}/${UPX_ARCHIVE} >> ${LOG_DIR}/${LOG_FILE} 2>&1
         checkResult $?
     fi
     tar xJf ${UPX_ARCHIVE}
